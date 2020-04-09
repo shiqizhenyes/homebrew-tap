@@ -7,10 +7,10 @@ class Spotifyd < Formula
 
   if OS.mac?
     url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-macos-full.tar.gz"
-    sha512 "eb33035860ee9b2974e929f20f5b9c6eb0b2526f717b6ea4cde3dc98c4220f2e8fed8b9bf97eda78e84d1b0c6f340e3ac93ca3a573e9a6cb12a31919828a0b35"
+    sha256 "93b0d8e5d5ea4549fbdf5ec468a790ca28609cff876f2d09251e46a9ae323afa"
   elsif OS.linux?
     url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-linux-full.tar.gz"
-    sha512 "bae35cd544f7d89457209a30532b053160214063b951e02c22cf121c03af1fdf5847dff245650c9a23df9d4113c9fea0d101af3c41ae23ba3c3fa35aaa4b291c"
+    sha256 "a3d01b7d74e49fa5c67946b9648f5b9c44de8290196b1858667503d8d53aa9e5"
   end
 
   depends_on "dbus"

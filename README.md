@@ -10,7 +10,7 @@ brew install Lykegenes/tap/spotifyd
 
 ### Automated
 
-The binaries and sha512s are already generated in the Spotifyd repository. Run the following script to fetch the latest sha512s and update `Formula/spotifyd.rb`.
+The binaries and sha256s are already generated in the Spotifyd repository. Run the following script to fetch the latest sha256s and update `Formula/spotifyd.rb`.
 
 ```
 sh scripts/spotifyd.sh $VERSION
