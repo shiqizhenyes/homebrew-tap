@@ -33,7 +33,7 @@ echo "Fetching macOS sha512"
 MAC_SHA=$(curl -sLS "${MAC_SHA_URL}" | cut -f1 -d\ "")
 
 cat > Formula/spotifyd.rb <<FORMULA
-class SpotifyTui < Formula
+class Spotifyd < Formula
   version "v${VERSION}"
   desc "A spotify daemon"
   homepage "https://github.com/Spotifyd/spotifyd"
@@ -41,10 +41,10 @@ class SpotifyTui < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotify-tui-macos.tar.gz"
+    url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-macos-full.tar.gz"
     sha512 "${MAC_SHA}"
   elsif OS.linux?
-    url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotify-tui-linux.tar.gz"
+    url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-linux-full.tar.gz"
     sha512 "${LINUX_SHA}"
   end
 
