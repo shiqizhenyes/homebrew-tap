@@ -5,7 +5,7 @@
 It can be installed using :
 
 ```bash
-brew install Lykegenes/tap/spotifyd
+brew install spotifyd/tap/spotifyd
 ```
 
 ### Automated
