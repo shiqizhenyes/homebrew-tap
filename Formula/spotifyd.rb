@@ -1,5 +1,5 @@
 class Spotifyd < Formula
-  version "v0.2.24"
+  version "v0.3.0"
   desc "A spotify daemon"
   homepage "https://github.com/Spotifyd/spotifyd"
 
@@ -7,10 +7,10 @@ class Spotifyd < Formula
 
   if OS.mac?
     url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-macos-full.tar.gz"
-    sha256 "93b0d8e5d5ea4549fbdf5ec468a790ca28609cff876f2d09251e46a9ae323afa"
+    sha256 "7d0004856618062901117a4f5d24355561b4343b02272e93284bb186d6763a6a"
   elsif OS.linux?
     url "https://github.com/Spotifyd/spotifyd/releases/download/#{version}/spotifyd-linux-full.tar.gz"
-    sha256 "a3d01b7d74e49fa5c67946b9648f5b9c44de8290196b1858667503d8d53aa9e5"
+    sha256 "f50004ba045050591d07d3efb9f8b7e7e71605744a1fed6bf8a05ba8f7787ea5"
   end
 
   depends_on "dbus"
