@@ -15,7 +15,7 @@ CURL=`which curl`
 [ -n ${SHASUM} ] && [ -n ${CURL} ] || exit 2
 
 # Check if macOS release exists, if it does then it is likely that the Linux one does too
-MAC_TAR_URL="https://github.com/shiqizhenyes/spotifyd/releases/download/v${VERSION}/spotifyd-macos-full.tar.gz"
+MAC_TAR_URL="https://github.com/shiqizhenyes/spotifyd/releases/download/v${VERSION}/spotifyd-macos-slim.tar.gz"
 
 CHECKVER_CODE=`curl -X HEAD -m 3 -sfw "%{response_code}" ${MAC_TAR_URL}`
 if [ $CHECKVER_CODE -ne 302 ]; then
@@ -25,7 +25,7 @@ fi
 
 # The Spotifyd CD generates sha512s, but Homebrew only supports sha256s.
 # The URLs for the respective sha512s
-#MAC_SHA_URL="https://github.com/shiqizhenyes/spotifyd/releases/download/v${VERSION}/spotifyd-macos-full.sha512"
+#MAC_SHA_URL="https://github.com/shiqizhenyes/spotifyd/releases/download/v${VERSION}/spotifyd-macos-slim.sha512"
 
 echo "Fetching macOS sha256"
 #MAC_SHA=$(curl -sLS "${MAC_SHA_URL}" | cut -f1 -d\ "")
@@ -40,7 +40,7 @@ class Spotifyd < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/shiqizhenyes/spotifyd/releases/download/#{version}/spotifyd-macos-full.tar.gz"
+    url "https://github.com/shiqizhenyes/spotifyd/releases/download/#{version}/spotifyd-macos-slim.tar.gz"
     sha256 "${MAC_SHA}"
   end
 
