@@ -6,13 +6,6 @@ class OpenjdkAT8 < Formula
   sha256 "6a83e8bd8caebf5dc8989a22925ac5598c9edb2ba8dcfad7472a5ff99a14c0e7"
   license "GPL-2.0-only"
 
-  bottle do
-    sha256 cellar: :any,                 big_sur:      "b37ae302878e8bdbfaaa9eb085c7315bef27c09fee834c1e43a7540b2b986d5a"
-    sha256 cellar: :any,                 catalina:     "85e18d44283b8c93a7065d2dd40540278607ff6d6fdf3e460cdbf5886c051c4b"
-    sha256 cellar: :any,                 mojave:       "b8893a1e645893395f767b21c947ab5669093f3b60c47a3c423a358aeeb024f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "384c545a8e63a4535ed6999d046f02d25206a72d2925489cba818c63df3e2e37"
-  end
-
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
