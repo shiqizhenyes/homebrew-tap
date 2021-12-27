@@ -67,7 +67,7 @@ class OpenjdkAT8 < Formula
       # Fix Xcode 13 detection.
       inreplace "common/autoconf/toolchain.m4",
                 "if test \"${XC_VERSION_PARTS[[0]]}\" != \"6\"",
-                "if test \"${XC_VERSION_PARTS[[0]]}\" != \"13\""
+                "if test \"${XC_VERSION_PARTS[[0]]}\" != \"13.2\""
     end
 
     if OS.linux?
