@@ -1,8 +1,8 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://github.com/shiqizhenyes/openjdk8/releases/download/1.8.0%2B312/openjdk8u275-ga.tar.xz"
-  version "1.8.0+312"
+  url "https://github.com/shiqizhenyes/openjdk8/releases/download/1.8.0%2B275/openjdk8u275-ga.tar.xz"
+  version "1.8.0+275"
   sha256 "6a83e8bd8caebf5dc8989a22925ac5598c9edb2ba8dcfad7472a5ff99a14c0e7"
   license "GPL-2.0-only"
 
