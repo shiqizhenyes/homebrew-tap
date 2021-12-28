@@ -8,7 +8,7 @@ class Nexus < Formula
   def install
     libexec.install Dir["*"]
     bin.install libexec/"bin/nexus"
-    bin.env_script_all_files libexec/"bin"
+    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
   end
 
   def post_install
