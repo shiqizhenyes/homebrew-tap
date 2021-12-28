@@ -6,7 +6,8 @@ class Nexus < Formula
   license "EPL-1.0"
 
   def install
-    (bin/"nexus").write_env_script libexec/"bin/nexus"
+    bin.install libexec/"bin/nexus"
+    bin.env_script_all_files libexec/"bin"
   end
 
   def post_install
