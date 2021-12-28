@@ -13,8 +13,8 @@ class Nexus < Formula
   end
 
   def post_install
-    system "echo | pwd"
-    system "unzip", "-o", "-d", "libexec/install4j.zip", "libexec"
+    system "ls"
+    system "unzip", "-o", "-d", "libexec", "libexec/install4j.zip"
     mkdir_p "#{var}/log/nexus" unless (var/"log/nexus").exist?
     mkdir_p "#{var}/nexus" unless (var/"nexus").exist?
     mkdir "#{etc}/nexus" unless (etc/"nexus").exist?
