@@ -6,9 +6,10 @@ class Nexus < Formula
   license "EPL-1.0"
 
   def install
+    ENV.prepend_create_path "JAVA_HOME", libexec+".install4j/jre.bundle/Contents/Home"
     libexec.install Dir["*"]
     bin.install libexec/"bin/nexus"
-    bin.env_script_all_files libexec/"bin", ENV("")
+    bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"]
   end
 
   def post_install
