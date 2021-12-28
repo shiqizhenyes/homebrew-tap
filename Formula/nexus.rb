@@ -8,7 +8,7 @@ class Nexus < Formula
   def install
     libexec.install Dir["*"]
     bin.install libexec/"bin/nexus"
-    ENV.prepend_create_path "JAVA_HOME", libexec+".install4j/jre.bundle/Contents/Home/jre"
+    ENV["JAVA_HOME"] = libexec+".install4j/jre.bundle/Contents/Home/jre"
     bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"]
   end
 
