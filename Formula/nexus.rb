@@ -10,10 +10,10 @@ class Nexus < Formula
     bin.install libexec/"bin/nexus"
     ENV["JAVA_HOME"] = libexec/".install4j/jre.bundle/Contents/Home/jre"
     bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"]
-    system "unzip", "-o", "install4j.zip"
   end
 
   def post_install
+    system "unzip", "-o", "install4j.zip"
     mkdir_p "#{var}/log/nexus" unless (var/"log/nexus").exist?
     mkdir_p "#{var}/nexus" unless (var/"nexus").exist?
     mkdir "#{etc}/nexus" unless (etc/"nexus").exist?
