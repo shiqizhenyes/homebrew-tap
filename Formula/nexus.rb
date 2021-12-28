@@ -8,14 +8,14 @@ class Nexus < Formula
   def install
     libexec.install Dir["*"]
     bin.install libexec/"bin/nexus"
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
+    bin.env_script_all_files libexec/"bin", Language::Java
   end
 
   def post_install
     mkdir_p "#{var}/log/nexus" unless (var/"log/nexus").exist?
     mkdir_p "#{var}/nexus" unless (var/"nexus").exist?
     mkdir "#{etc}/nexus" unless (etc/"nexus").exist?
-    mkdir "#{share}/nexus/sonatype-work" unless (share/"nexus/sonatype-work").exist?
+    mkdir_p "#{share}/nexus/sonatype-work" unless (share/"nexus/sonatype-work").exist?
   end
 
   service do
