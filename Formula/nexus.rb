@@ -2,7 +2,7 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.org/"
   url "https://github.com/shiqizhenyes/nexus/releases/download/v3.34.0-01/nexus-3.34.0-01.zip"
-  sha256 "bf84fec8a84ce61290d18b7cf905fe11b4acea5f8f5bcb00577e9e9faa7692b6"
+  sha256 "3717b57b676d797194f9c66b595972d4bad27c7ce898dc0617970497f8ad5c40"
   license "EPL-1.0"
 
   def install
