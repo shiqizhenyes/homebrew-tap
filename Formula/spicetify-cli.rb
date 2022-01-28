@@ -10,8 +10,7 @@ class SpicetifyCli < Formula
   
     def install
       libexec.install Dir["*"]
-      bin.install libexec/"spicetify"
-      bin.env_script_all_files libexec/"spicetify"
+      bin.install_symlink Dir[libexec/"spicetify"]
     end
   
     test do
