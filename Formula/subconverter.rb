@@ -2,12 +2,13 @@ class Subconverter < Formula
   desc "Utility to convert between various proxy subscription formats"
   homepage "https://github.com/tindy2013/subconverter"
   url "https://github.com/shiqizhenyes/subconverter/releases/download/v0.7.2/subconverter-0.7.2.zip"
-  sha256 "026cd4dbfd5cd9436c8631672c9e4152ecbd823aba2194f87acae983b7a65c57"
+  sha256 "665a90f4c2c336bd699fc603bbbffc26e373042737e7320dd7e752dadb2894e1"
   license "GPL-3.0"
 
   def install
     libexec.install Dir["*"]
-    bin.install libexec/"bin/subconverter"
+    # bin.install libexec/"bin/subconverter"
+    bin.write_exec_script (libexec/"bin/subconverter")
   end
 
   def post_install
@@ -15,6 +16,7 @@ class Subconverter < Formula
     # mkdir "#{etc}/subconverter" unless (etc/"subconverter").exist?
     pkgetc.install libexec/"base"
     pkgetc.install libexec/"snippets"
+    mkdir_p "#{var}/log/subconverter" unless (var/"log/subconverter").exist?
     # mv libexec/"base" "#{etc}/subconverter/"
     # mv libexec/"config" "#{etc}/subconverter/"
     # mv libexec/"rules" "#{etc}/subconverter/"
@@ -24,6 +26,12 @@ class Subconverter < Formula
 
   service do
     run [opt_bin/"subconverter", "run"]
+    process_type :background
+    keep_alive true
+    run_type :interval
+    interval 60
+    log_path "#{var}/log/subconverter/access.log"
+    error_log_path "#{var}/log/subconverter/error.log"
   end
 
 end
