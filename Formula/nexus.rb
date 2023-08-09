@@ -1,14 +1,13 @@
 class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https://www.sonatype.org/"
-  url "https://github.com/shiqizhenyes/nexus/releases/download/v3.34.0-01/nexus-3.34.0-01.zip"
-  sha256 "3717b57b676d797194f9c66b595972d4bad27c7ce898dc0617970497f8ad5c40"
+  url "https://github.com/shiqizhenyes/nexus/releases/download/3.58.1-02/nexus-3.58.1-02.zip"
+  sha256 "d962a6a52b0226dd5c00ce754e48e6d7113f00f6848a58b0aafb03fb20cd4930"
   license "EPL-1.0"
 
   def install
     libexec.install Dir["*"]
-    bin.install libexec/"bin/nexus"
-    ENV["JAVA_HOME"] = libexec/".install4j/jre.bundle/Contents/Home/jre"
+    ENV["JAVA_HOME"] = "/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home/"
     bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"]
   end
 
@@ -21,7 +20,13 @@ class Nexus < Formula
   end
 
   service do
-    run [opt_bin/"nexus", "start"]
+    run [opt_bin/"nexus", "run"]
+    process_type :background
+    keep_alive true
+    run_type :interval
+    interval 60
+    log_path "#{var}/log/nexus/access.log"
+    error_log_path "#{var}/log/nexus/error.log"
   end
 
   # test do
