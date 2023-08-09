@@ -7,8 +7,8 @@ class Nexus < Formula
 
   def install
     libexec.install Dir["*"]
-    ENV["JAVA_HOME"] = "/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home/"
-    bin.env_script_all_files libexec/"bin", :JAVA_HOME => ENV["JAVA_HOME"]
+    env = { :JAVA_HOME => "/usr/local/opt/openjdk@8/libexec/openjdk.jdk/Contents/Home/"}
+    (bin/"nexus").write_env_script(libexec/"bin/nexus", env)
   end
 
   def post_install
