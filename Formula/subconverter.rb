@@ -1,7 +1,7 @@
 class Subconverter < Formula
   desc "Utility to convert between various proxy subscription formats"
   homepage "https://github.com/tindy2013/subconverter"
-  url "https://github.com/shiqizhenyes/subconverter/releases/download/v0.7.2/subconverter_darwin64.tar.gz"
+  url "https://github.com/shiqizhenyes/subconverter/releases/download/v0.7.2/subconverter-0.7.2.tar.gz"
   sha256 "e2a35005e756508e58cd68cf17fa7fc099066f8fde5342168bb4c69c4e01a4d1"
   license "GPL-3.0"
 
